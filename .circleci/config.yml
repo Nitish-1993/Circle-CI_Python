@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Run Test1.py
-          command: python Test1.py
+          command: python C:\Users\Nitish Kumar DV\Downloads\CircleCI\Python\Test1.py
   test:
     docker:
       - image: cimg/python:3.11
