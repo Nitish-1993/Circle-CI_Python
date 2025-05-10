@@ -19,6 +19,15 @@ jobs:
       - run:
           name: Run Test2.py
           command: python Python/Test2.py
+  deploy:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run:
+          name: Run Deploying
+          command: echo "Deploying in the environment"
+
 workflows:
   build_now:
     jobs:
@@ -26,5 +35,5 @@ workflows:
       - test:
           requires:
             - build
-      - deploy:
-            -run: echo "Deploying in the environment"
+      - deploy
+            
