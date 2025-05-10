@@ -1,27 +1,25 @@
-version : 2.11
+version: 2.1
 jobs:
   build:
     docker:
-    - image: cimg/python:3.11
-    - checkout
-    - run :Test1.py
-
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run:
+          name: Run Test1.py
+          command: python Test1.py
   test:
     docker:
-    - image: cimg/python:3.11
-    - checkout
-    - run :Test2.py
-
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run:
+          name: Run Test2.py
+          command: python Test2.py
 workflows:
   build_now:
     jobs:
       - build
       - test:
-          Requires:
-           - build 
-      
-  #deploy:
-  #jobs:
-    #- build
-    #- test
-    #- deploy
+          requires:
+            - build
