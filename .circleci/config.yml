@@ -1,19 +1,19 @@
 version : 2.10
 jobs:
-build:
-  docker:
-   - image: cimg/python:3.11
-   - checkout
-   - run :Test1.py
+  build:
+    docker:
+    - image: cimg/python:3.11
+    - checkout
+    - run :Test1.py
 
-test:
-  docker:
-   - image: cimg/python:3.11
-   - checkout
-   - run :Test2.py
+  test:
+    docker:
+    - image: cimg/python:3.11
+    - checkout
+    - run :Test2.py
 
 workflows:
-  build_Name:
+  build_now:
     jobs:
       - build
       - test:
