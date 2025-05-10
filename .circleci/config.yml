@@ -26,3 +26,5 @@ workflows:
       - test:
           requires:
             - build
+      - deploy:
+            -run: echo "Deploying in the environment"
