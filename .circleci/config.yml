@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: List project files for debugging
+          command: ls -al
+      - run:
           name: Run Test1.py
           command: python Test1.py
   test:
