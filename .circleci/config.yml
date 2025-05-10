@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run:
           name: Run Deploying
-          command: echo "Deploying in the environment"
+          command: echo "Deployed in the environment"
 
 workflows:
   build_now:
