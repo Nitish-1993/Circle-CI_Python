@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run:
           name: Run Test2.py
-          command: python Test2.py
+          command: python Python/Test2.py
 workflows:
   build_now:
     jobs:
