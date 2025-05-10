@@ -6,19 +6,19 @@ jobs:
     steps:
       - checkout
       - run:
-          name: List project files for debugging
-          command: ls -al
-      - run:
           name: Run Test1.py
-          command: python Test1.py
+          command: python Python/Test1.py
   test:
     docker:
       - image: cimg/python:3.11
     steps:
       - checkout
       - run:
+          name: List files for debugging
+          command: ls -R
+      - run:
           name: Run Test2.py
-          command: python Test2.py
+          command: python Python/Test2.py
 workflows:
   build_now:
     jobs:
